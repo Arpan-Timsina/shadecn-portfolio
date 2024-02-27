@@ -34,7 +34,7 @@ const page = () => {
           by a relentless pursuit of excellence and a genuine love for crafting
           exceptional user experiences, I`&apos;`m excited to collaborate, innovate,
           and contribute to projects that make a meaningful impact in the
-          digital landscape. Let's build something incredible together!
+          digital landscape. Let`&apos;`s build something incredible together!
         </p>
       </div>
       <div className="w-full flex flex-row justify-between max-lg:flex-col ">
