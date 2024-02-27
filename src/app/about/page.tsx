@@ -24,19 +24,22 @@ const page = () => {
         </Heading>
 
         <p className=" font-poppins  text-xl w-full text-primary max-sm:text-lg">
-          I am a Full Stack Web Developer situated in  Kathmandu, Nepal.
-          My work consists of creating and developing web applications with pixel perfect design and seemlessly integrating frontend with backend architecture.
+          I am a Full Stack Web Developer situated in Kathmandu, Nepal. My work
+          consists of creating and developing web applications with pixel
+          perfect design and seemlessly integrating frontend with backend
+          architecture.
           <br></br>
-          Beyond just writing code, I am deeply invested in staying updated with the latest trends and best practices in frontend development.
-          Driven by a relentless pursuit of excellence and a genuine love for crafting exceptional user experiences, I'm excited to collaborate, innovate, and contribute to projects that make a meaningful impact in the digital landscape. Let's build something incredible together! 
-
-          
+          Beyond just writing code, I am deeply invested in staying updated with
+          the latest trends and best practices in frontend development. Driven
+          by a relentless pursuit of excellence and a genuine love for crafting
+          exceptional user experiences, I`&apos;`m excited to collaborate, innovate,
+          and contribute to projects that make a meaningful impact in the
+          digital landscape. Let's build something incredible together!
         </p>
       </div>
       <div className="w-full flex flex-row justify-between max-lg:flex-col ">
         <Aboutfooter />
       </div>
-      
     </div>
   );
 };
