@@ -1,36 +1,35 @@
 import Heading from "@/components/Heading";
-import SkillsFooter from "@/components/SkillsFotter";
+import SkillsFooter from "@/components/SkillsFooter";
 import { Badge } from "@/components/ui/badge";
 import { Lightbulb } from "lucide-react";
-import html from '../../../public/html.png'
-import css from '../../../public/css.png'
-import scss from '../../../public/scss.png'
-import js from '../../../public/js.png'
-import ts from '../../../public/ts.png'
-import react from '../../../public/react.png'
-import nextjs from '../../../public/nextjs.jpeg'
-import cplus from '../../../public/c++.jpeg'
-import tailwind from '../../../public/tailwindcss.png'
-import github from '../../../public/github.png'
-import vscode from '../../../public/vscode.png'
+import html from "../../../public/html.png";
+import css from "../../../public/css.png";
+import scss from "../../../public/scss.png";
+import js from "../../../public/js.png";
+import ts from "../../../public/ts.png";
+import react from "../../../public/react.png";
+import nextjs from "../../../public/nextjs.jpeg";
+import cplus from "../../../public/c++.jpeg";
+import tailwind from "../../../public/tailwindcss.png";
+import github from "../../../public/github.png";
+import vscode from "../../../public/vscode.png";
+import django from "../../../public/django-icon.png";
 const skillPage = () => {
-
-    const language = [
-        {alt:"html", img:html},
-        {alt:"css", img:css},
-        {alt:"js", img:js},
-        {alt:"ts", img:ts},
-        {alt:"cplus", img:cplus},
-    ]
-    const framework = [
-        {alt:"react", img:react},
-        {alt:"nextjs", img:nextjs},
-        {alt:"scss", img:scss},
-        {alt:"tailwind", img:tailwind},
-        {alt:"github", img:github},
-        {alt:"vscode", img:vscode},
-    ]
-       
+  const language = [
+    { alt: "HTML", img: html },
+    { alt: "CSS", img: css },
+    { alt: "JavaScript", img: js },
+    { alt: "TypeScript", img: ts },
+  ];
+  const framework = [
+    { alt: "React", img: react },
+    { alt: "Nextjs", img: nextjs },
+    { alt: "SCSS", img: scss },
+    { alt: "Tailwind", img: tailwind },
+    { alt: "Github", img: github },
+    { alt: "VSCode", img: vscode },
+    { alt: "Django", img: django },
+  ];
 
   return (
     // SKILLS PAGE
@@ -43,26 +42,27 @@ const skillPage = () => {
         <Heading>My Technical Experience/Skills.</Heading>
 
         <p className="font-poppins text-xl w-full text-primary max-sm:text-lg">
-          Currently i am a fresher and i have a solid understand of HTML5, CSS3, JS, TS and React, including
-          responsive design principles. I specialize in building web
-          applications and sites using Javascript, Typescript, React, Nextjs &
-          Node.
+          I possess a solid understanding of HTML5, CSS3, JavaScript (JS),
+          TypeScript (TS), and React, along with responsive design principles.
+          Specializing in building web applications and sites, I excel in
+          utilizing JavaScript, TypeScript, React, and Next.js. With expertise
+          in Django, I am adept at delivering comprehensive web solutions.
         </p>
         <div className="block">
-        <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl">
-           Programming Languages
-        </h1>
-        <div className="w-full h-fit flex-row flex justify-between items-center">
-        <SkillsFooter items={language} />
-        </div>
+          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl">
+            Programming Languages
+          </h1>
+          <div className="w-full h-fit flex-row flex justify-between items-center">
+            <SkillsFooter items={language} />
+          </div>
         </div>
         <div className="block">
-        <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl">
-           Framework/Libraries and Version Control
-        </h1>
-        <div className="w-full h-fit flex-row flex justify-between items-center">
-        <SkillsFooter items={framework} />
-        </div>
+          <h1 className="gap-2 text-2xl font-poppins text-primary font-semibold flex text_underline relative max-sm:text-xl">
+            Framework/Libraries and Version Control
+          </h1>
+          <div className="w-full h-fit flex-row flex justify-between items-center">
+            <SkillsFooter items={framework} />
+          </div>
         </div>
       </div>
     </div>
