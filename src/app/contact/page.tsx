@@ -7,20 +7,21 @@ import { Phone } from "lucide-react";
  
 const contactPage = () => {
   return (
-    // PROJECT PAGE
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <Badge className=" gap-2">
+    // CONTACT PAGE
+    <main className="container mx-auto min-h-screen px-4 py-8 pt-16 flex flex-col items-start gap-8"> {/* Standardized top padding */}
+      <Badge className="gap-2 self-start">
         <Phone className="h-5 w-5" />
         Contact
       </Badge>
-      <div className="flex flex-col gap-3 w-full">
+
+      <div className="flex flex-col gap-5 w-full items-center"> {/* Centering content for this page */}
         <Heading>Contact Me!</Heading>
-        <div className="h-auto w-full flex justify-center items-center">
-        <ContactForm/>
+        <div className="w-full max-w-lg mt-4"> {/* Max width for the form container */}
+          <ContactForm />
         </div>
-        <p className=" font-poppins text-lg w-full text-primary max-sm:text-base"></p>
+        {/* Empty paragraph removed */}
       </div>
-    </div>
+    </main>
   );
 };
 

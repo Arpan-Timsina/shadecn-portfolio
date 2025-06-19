@@ -24,23 +24,25 @@ module.exports = {
     },
     extend: {
       fontFamily:{
-        poppins: ['var(--font-poppins)'],
+        sans: ['Inter', 'sans-serif'], // Added Inter for body
+        poppins: ['var(--font-poppins)'], // Kept Poppins for headings
         rubik: ['var(--font-rubik)']
       },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "#F3F4F6", // Secondary color - Light Gray
+        foreground: "#374151", // Body text color - Dark Gray
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#3B82F6", // Primary color - Cool Blue
+          foreground: "#FFFFFF", // White text on primary background
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#F3F4F6", // Secondary color - Light Gray
+          foreground: "#374151", // Dark Gray text on secondary background
         },
+        heading: "#000000", // Headings text color - Black
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

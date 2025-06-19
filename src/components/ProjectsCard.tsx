@@ -15,15 +15,15 @@ interface projectcardprops {
 }
 const ProjectCards: React.FC<projectcardprops> = ({ value }) => {
   return (
-  
-    <Card  className="max-w-[32%] max-lg:max-w-full">
+    // Default to full width, 2 columns on md, 3 columns on xl. Parent container should have flex-wrap and gap.
+    <Card className="w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)] flex flex-col"> {/* Ensure flex-col for consistent height if content varies */}
       <CardHeader>
-        <CardTitle >{value.title}</CardTitle>
-       
+        <CardTitle>{value.title}</CardTitle> {/* Removed extra space */}
+
       </CardHeader>
-      <CardContent>
-        <p className="text-base font-poppins">{value.description}</p>
-      <div className=" w-full h-fit flex mt-2 justify-center flex-row gap-3">
+      <CardContent className="flex flex-col gap-4"> {/* Added gap for content spacing */}
+        <p className="text-base font-sans text-card-foreground">{value.description}</p> {/* Changed font, ensured text color from card */}
+      <div className="w-full flex flex-wrap justify-center gap-2 mt-2"> {/* Ensured tags wrap and have gap */}
         {
           value.tags.map((itm:string, indx:number) => {
             return <Badge variant='outline' key={indx}>{itm}</Badge>

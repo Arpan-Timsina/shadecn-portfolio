@@ -50,28 +50,35 @@ const Navbar = () => {
 
 
   return (
-    <div className={`h-fit w-fit fixed top-5 right-0 left-0  m-auto border border-black rounded-full  p-2 bg-transparent   flex-row gap-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-100 max-sm:gap-1 ${scrolling ? "hidden":"flex"}`}>
-      {items.map((itm) => {
-        return (
-          <TooltipProvider key={itm.name}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link href={itm.link}
-                  className={cn(
-                    buttonVariants({ variant:"ghost", size: "sm" })
-                  )}
-                >
-                  {itm.icon}
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{itm.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        );
-      })}
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 w-full flex justify-center items-center py-3 px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out",
+      scrolling ? "bg-secondary shadow-md" : "bg-transparent",
+    )}>
+      <div className="flex gap-2 max-sm:gap-1"> {/* Adjusted gap for responsiveness */}
+        {items.map((itm) => {
+          return (
+            <TooltipProvider key={itm.name}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={itm.link}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "sm" }),
+                      "text-foreground hover:text-primary hover:bg-primary/10 active:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md" // Adjusted styling for colors and states
+                    )}
+                  >
+                    {itm.icon}
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="bg-background border-border text-foreground">
+                  <p>{itm.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          );
+        })}
       </div>
+    </nav>
   );
 };
 

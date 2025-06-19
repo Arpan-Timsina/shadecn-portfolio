@@ -24,25 +24,27 @@ const projectsPage = () => {
 
   return (
     // PROJECT PAGE
-    <div className="h-full w-full relative flex flex-col items-start gap-5 overflow-hidden">
-      <Badge className=" gap-2">
+    <main className="container mx-auto min-h-screen px-4 py-8 pt-16 flex flex-col items-start gap-8"> {/* Standardized top padding */}
+      <Badge className="gap-2 self-start">
         <Layers className="h-5 w-5" />
         Projects
       </Badge>
-      <div className="flex flex-col gap-3">
+
+      <div className="flex flex-col gap-5 w-full"> {/* Increased gap */}
         <Heading>My Projects</Heading>
 
-        <p className=" font-poppins text-lg w-full text-primary max-sm:text-base">
-        Welcome to my showcase of innovative projects, where creativity meets technical prowess! Each creation embodies a journey of problem-solving and continuous learning. Dive in and explore the fruits of my passion and expertise in action
+        <p className="font-sans text-lg sm:text-xl w-full text-foreground leading-relaxed"> {/* Themed paragraph */}
+        Welcome to my showcase of innovative projects, where creativity meets technical prowess! Each creation embodies a journey of problem-solving and continuous learning. Dive in and explore the fruits of my passion and expertise in action.
         </p>
       </div>
 
-      <div className=" w-full flex flex-row flex-wrap gap-2 max-lg:flex-col overflow-hidden">
+      {/* Container for Project Cards */}
+      <div className="w-full flex flex-wrap justify-center sm:justify-start gap-6 mt-4"> {/* Adjusted gap and added mt */}
         {Projects.map((val, indx) => {
           return <ProjectCards key={indx} value={val} />;
         })}
       </div>
-    </div>
+    </main>
   );
 };
 

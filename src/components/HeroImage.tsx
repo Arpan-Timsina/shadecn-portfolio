@@ -12,8 +12,9 @@ const HeroImage = ()  => {
           alt="logo"
           loading="eager"
           priority
-          height={1000}
-          width={1000}
+          width={1000} // Intrinsic width for aspect ratio
+          height={1000} // Intrinsic height for aspect ratio
+          className="w-full h-auto rounded-lg shadow-lg object-cover" // Added styling
         />
         </>
     )
