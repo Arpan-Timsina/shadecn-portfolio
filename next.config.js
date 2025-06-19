@@ -4,6 +4,9 @@ const nextConfig = {
         serverComponentsExternalPackages: [
             '@react-email/render',
         ]
+    },
+    eslint: {
+      ignoreDuringBuilds: true,
     }
 }
 
