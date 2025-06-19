@@ -7,8 +7,10 @@ function DownLoadResumeBtn() {
   return (
     <Button asChild variant="default" size="lg" className="gap-2">
       <Link href="/files/resume.docx" download='resume.docx'>
-        <Download className="h-5 w-5" />
-        Download Resume
+        <span className="flex items-center">
+          <Download className="h-5 w-5 mr-2" /> {/* Re-added mr-2 as Button's gap won't apply inside span */}
+          Download Resume
+        </span>
       </Link>
     </Button>
   );
