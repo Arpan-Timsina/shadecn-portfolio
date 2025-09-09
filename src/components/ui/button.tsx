@@ -37,26 +37,43 @@ const buttonVariants = cva(
   }
 )
 
+import { Slot } from "@radix-ui/react-slot" // Import Slot
+
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
-  isLoading?: boolean
+  asChild?: boolean; // Add asChild prop
+  isLoading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, variant, isLoading, size, ...props }, ref) => {
+  (
+    {
+      className,
+      children,
+      variant,
+      isLoading,
+      size,
+      asChild = false, // Add asChild with default false
+      ...props
+    },
+    ref
+  ) => {
+    const Comp = asChild ? Slot : "button"; // Determine component type
     return (
-      <button
+      <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        disabled={isLoading}
-        {...props}>
-        {isLoading ? <Loader2 className='mr-2 h-4 w-4 animate-spin' /> : null}
+        disabled={isLoading || props.disabled}
+        {...props}
+      >
+        {/* Loader is only rendered if not asChild. If asChild, the child should handle its own loading state if necessary. */}
+        {!asChild && isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
         {children}
-      </button>
-    )
+      </Comp>
+    );
   }
-)
-Button.displayName = 'Button'
+);
+Button.displayName = "Button";
 
 export { Button, buttonVariants }

@@ -5,20 +5,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
  
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
  
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -29,28 +20,20 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%; /* Default light gray for borders/inputs */
+    --input: 214.3 31.8% 91.4%;  /* Default light gray for borders/inputs */
+    --ring: 217 91% 60%; /* Updated to new primary color: hsl(217, 91%, 60%) from #3B82F6 */
  
     --radius: 0.5rem;
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
- 
+    /* Removed commented out HSL variables for background, foreground, primary, secondary */
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
  
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
  
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -61,9 +44,9 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
  
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217.2 32.6% 17.5%; /* Default dark border/input */
+    --input: 217.2 32.6% 17.5%;  /* Default dark border/input */
+    --ring: 217 91% 75%; /* Lighter variant of new primary for dark mode focus: hsl(217, 91%, 75%) */
   }
 }
  
@@ -72,7 +55,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* Ensure font-sans is applied */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins text-heading; /* Apply Poppins and heading color to headings */
   }
 }
 
@@ -80,9 +66,9 @@
 .name_underline::after{
   content: "";
   display: block;
-  width: 6rem;
-  height: .6rem;
-  background-color: #2f7df4;
+  width: 6rem; /* Consider making this responsive if needed, e.g., using em or relative units */
+  height: .6rem; /* Consider making this responsive */
+  background-color: #3B82F6; /* Updated to new primary color */
 }
 .icon_underline::after{
   content: "";
@@ -91,8 +77,16 @@
     display: block;
     width: 2rem;
     height: .3rem;
-    background-color: #2f7df4;
+    background-color: #3B82F6; /* Updated to new primary color */
     margin-bottom: 2rem;
+}
+.text_underline::after{ /* New style for section underlines */
+  content: "";
+  display: block;
+  width: 4rem; /* Adjusted width */
+  height: .2rem; /* Adjusted height */
+  background-color: #3B82F6; /* New primary color */
+  margin-top: 0.25rem; /* Optional: space between text and underline */
 }
 .education_point::before{
   content: "";
@@ -103,9 +97,9 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #2f7df4;
-    outline: 3px solid var(--primary);
-    box-shadow: 0 2px 5px 2px #2f7df4;
+    background-color: #3B82F6; /* New primary color */
+    outline: 3px solid #3B82F6; /* New primary color */
+    box-shadow: 0 2px 5px 2px #3B82F680; /* New primary color with alpha for shadow */
 }
 /* TEXT ROTATOR STYLES  */
 .animate-text-slide {

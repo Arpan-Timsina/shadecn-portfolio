@@ -11,16 +11,24 @@ const SocialLinks = () => {
  
   ];
   return (
-    <>
+    <div className="flex gap-3"> {/* Added wrapper div for horizontal spacing */}
       {links.map((itm, indx) => {
         return (
-          <Link key={indx} target="blank"
+          <Link
+            key={indx}
+            target="_blank" // Ensure _blank for external links
+            rel="noopener noreferrer" // Security best practice for _blank links
             href={itm.link}
-            className={cn(buttonVariants({ variant: "ghost", size: "icon" }))}
-          >{itm.icon}</Link>
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon" }),
+              "text-foreground/80 hover:text-primary hover:bg-primary/10 active:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md" // Consistent styling with Navbar links
+            )}
+          >
+            {itm.icon}
+          </Link>
         );
       })}
-    </>
+    </div>
   );
 };
 

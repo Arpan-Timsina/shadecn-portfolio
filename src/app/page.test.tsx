@@ -1,0 +1,43 @@
+import { render, screen } from '@testing-library/react';
+import Home from './page';
+import '@testing-library/jest-dom';
+
+// Mocks
+jest.mock('next/image', () => ({
+  __esModule: true,
+  default: (props: any) => {
+    const { priority, ...rest } = props; // Destructure to remove 'priority'
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img {...rest} alt={props.alt || "mocked image"} />; // Pass 'rest' without 'priority'
+  },
+}));
+
+jest.mock('next-themes', () => ({
+  useTheme: () => ({ setTheme: jest.fn(), theme: 'light' }),
+  ThemeProvider: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+}));
+
+jest.mock('lucide-react', () => {
+  const originalModule = jest.requireActual('lucide-react');
+  const KebabCase = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  const newIcons: { [key: string]: any } = {};
+  Object.keys(originalModule)
+    .filter(key => typeof originalModule[key] === 'function' || typeof originalModule[key] === 'object')
+    .forEach(key => {
+      newIcons[key] = (props: any) => {
+        const ComponentName = KebabCase(key);
+        // Ensure a default data-testid or some identifiable attribute for icons if needed for testing
+        return <svg data-lucide={ComponentName} data-testid={`icon-${ComponentName}`} {...props} />;
+      };
+    });
+  return newIcons;
+});
+
+
+describe('Home Page', () => {
+  it('renders without crashing and shows main heading', () => {
+    render(<Home />);
+    // Check for the main heading specific to the Home page
+    expect(screen.getByRole('heading', { name: /Arpan Timsina/i })).toBeInTheDocument();
+  });
+});

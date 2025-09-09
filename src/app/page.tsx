@@ -14,24 +14,23 @@ export const siteConfig = {
 }
 export default function Home() {
   return (
-   <>
-      {/* LEFT SIDE  */}
-      <div className=" h-full w-auto flex flex-col justify-start gap-4">
-        <HeroTexts />
-        <div className="h-fit w-full p-4 flex gap-3">
-          <SocialLinks />
+    <main className="container mx-auto min-h-screen flex flex-col items-center justify-center px-4 py-8 pt-16"> {/* Standardized top padding */}
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full">
+        {/* LEFT SIDE - Text Content */}
+        <div className="flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left order-2 lg:order-1 lg:w-1/2">
+          <HeroTexts />
+          <SocialLinks /> {/* Assuming SocialLinks has its own padding/margins or we adjust its container if needed */}
+          <DownLoadResumeBtn />
         </div>
-       <DownLoadResumeBtn/>
+
+        {/* RIGHT SIDE - Image */}
+        <div className="relative w-full max-w-md lg:max-w-none lg:w-1/2 flex justify-center order-1 lg:order-2">
+          {/* IMAGE - Ensure HeroImage is responsive within this container */}
+          <HeroImage />
+        </div>
       </div>
-      {/* RIGHT SIDE image  */}
-      <div className="h-full w-[47%] relative block max-lg:hidden">
-       
-      {/* IMAGE  */}
-        <HeroImage />
-      </div>
-     
-      {/* GITHUB BUTTON  */}
-      <GithubBtn/>
-      </>
+      {/* GITHUB BUTTON - Will address its positioning later, might need to move into the flex flow or adjust its absolute positioning based on new layout */}
+      <GithubBtn />
+    </main>
   );
 }
